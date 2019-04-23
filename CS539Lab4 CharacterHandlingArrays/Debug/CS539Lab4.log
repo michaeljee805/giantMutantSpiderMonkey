@@ -1,0 +1,5 @@
+﻿  Source.c
+e:\piercecollege\cs539\cs539lab4\source.c(39): warning C4020: 'reset': too many actual parameters
+e:\piercecollege\cs539\cs539lab4\source.c(69): warning C4013: 'gets' undefined; assuming extern returning int
+e:\piercecollege\cs539\cs539lab4\source.c(64): warning C4101: 'iochar': unreferenced local variable
+  CS539Lab4.vcxproj -> E:\PierceCollege\CS539\CS539Lab4\Debug\CS539Lab4.exe
