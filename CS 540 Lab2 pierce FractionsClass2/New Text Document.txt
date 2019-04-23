@@ -1,0 +1,167 @@
+// Michael Jee
+// 9/12/18
+// CS 540 Lab2
+
+#include <iostream>
+using namespace std;
+
+class fractions {
+private:
+	int who;
+	int num;
+	int den;
+public:
+	fractions(); //default constructor declaration
+	fractions(int num, int den); //two argument constructor declaration
+	fractions(int who, int num, int den); //three argument constructor declaration
+	fractions(const fractions & copyThis); //copy constructor declaration; copies copyThis into the member
+	
+	~fractions(); //destructor declaration
+	
+	void setWho(int w); //mutator to set who to argument w
+	void setNum(int n); //mutator to set num to argument n
+	void setDen(int d);//mutator to set den to argument d
+	
+	int getWho() const; //accessor for wholes
+	int getNum() const; //accessor for numerator
+	int getDen() const; //accessor for denominator
+	void print() const; //accessor to print
+};
+
+int main() {
+	fractions fracD;
+	fracD.print();
+	fractions frac2(1, 2);	
+	frac2.print();
+	fractions frac3(3, 4, 5);
+	frac3.print();
+	fractions fracC(fracD);
+	fracC.print();
+	return 0;
+}
+
+fractions::fractions() { //default constructor definition
+	cout << "Default constructor executing." << endl;
+	who = 0;
+	num = 0;
+	den = 1;
+}
+
+fractions::fractions(int num, int den) { //two argument constructor definition
+	cout << "Two argument constructor executing." << endl;
+	who = 0;
+	setNum(num);
+	setDen(den);
+}
+
+fractions::fractions(int who, int num, int den) { //three argument constructor definition
+	cout << "Three argument constructor executing." << endl;
+	setWho(who);
+	setNum(num);
+	setDen(den);
+}
+
+fractions::fractions(const fractions & copyThis) { //copy constructor definition
+	cout << "Copy constructor executing." << endl;
+	who = copyThis.who;
+	num = copyThis.num;
+	den = copyThis.den;
+}
+
+fractions::~fractions() { //destructor defintion
+	cout << "Destructor executing." << endl;
+	who = 0;
+	num = 0;
+	den = 1;
+}
+
+void fractions::setWho(int w) { //mutator for wholes
+	who = w;
+	if (who < 0) {
+		who = 0;
+		cout << "Error. Only numbers greater than or equal to 0 allowed for the whole number." << endl;
+	}
+}
+
+void fractions::setNum(int n) { //mutator for numerators
+	num = n;
+	if (num < 0) {
+		num = 0;
+		cout << "Error. Only numbers greater than or equal to 0 allowed for the numerator." << endl;
+	}
+}
+
+void fractions::setDen(int d) { //mutator for denominators
+	den = d;
+	if (den <= 0) {
+		den = 1;
+		cout << "Error. Only numbers greater than 0 allowed for the denominator." << endl;
+	}
+}
+
+int fractions::getWho() const { //accessor for wholes
+	return who;
+}
+
+int fractions::getNum() const { //accessor for numerators
+	return num;
+}
+
+int fractions::getDen() const { //accessor for denominators
+	return den;
+}
+
+void fractions::print() const {
+	cout << getWho() << " " << getNum() << "/" << getDen() << endl;
+}
+
+/*
+Default constructor executing.
+0 0/1
+Two argument constructor executing.
+0 1/2
+Three argument constructor executing.
+3 4/5
+Copy constructor executing.
+0 0/1
+Destructor executing.
+Destructor executing.
+Destructor executing.
+Destructor executing.
+Press any key to continue . . .
+
+Default constructor executing.
+0 0/1
+Two argument constructor executing.
+Error. Only numbers greater than or equal to 0 allowed for the numerator.
+Error. Only numbers greater than 0 allowed for the denominator.
+0 0/1
+Three argument constructor executing.
+Error. Only numbers greater than or equal to 0 allowed for the whole number.
+Error. Only numbers greater than or equal to 0 allowed for the numerator.
+Error. Only numbers greater than 0 allowed for the denominator.
+0 0/1
+Copy constructor executing.
+0 0/1
+Destructor executing.
+Destructor executing.
+Destructor executing.
+Destructor executing.
+Press any key to continue . . .
+
+Default constructor executing.
+0 0/1
+Two argument constructor executing.
+Error. Only numbers greater than 0 allowed for the denominator.
+0 1/1
+Three argument constructor executing.
+Error. Only numbers greater than 0 allowed for the denominator.
+3 4/1
+Copy constructor executing.
+0 0/1
+Destructor executing.
+Destructor executing.
+Destructor executing.
+Destructor executing.
+Press any key to continue . . .
+*/
