@@ -1,0 +1,5 @@
+﻿  MDJLab2.cpp
+e:\piercecollege\0_current_term\mdjlab2\mdjlab2.cpp(103): warning C4309: '=': truncation of constant value
+e:\piercecollege\0_current_term\mdjlab2\mdjlab2.cpp(151): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+e:\piercecollege\0_current_term\mdjlab2\mdjlab2.cpp(164): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  MDJLab2.vcxproj -> E:\PierceCollege\0_current_term\MDJLab2\Debug\MDJLab2.exe
