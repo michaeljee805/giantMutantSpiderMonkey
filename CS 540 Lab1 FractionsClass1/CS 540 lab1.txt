@@ -1,0 +1,79 @@
+#include <iostream>
+using namespace std;
+
+//repeat not working
+// ******* comment things
+// change while loop to if thens and output 0 0/1?
+
+class fractions {
+	private:
+		int num = 0;
+		int den = 0;
+		int who = 0;
+		//bool error = false;
+	public:
+		void input ();
+		void calculate ();
+		void output (char & repeat);
+};
+
+int main () {
+	char rep;
+	fractions frac;
+	do
+	{
+		frac.input ();
+		frac.calculate ();
+		frac.output (rep);
+	}
+	while (rep == 'Y' || 'y');
+	return 0;
+}
+
+void fractions :: input () {
+	cout << "Please enter the whole portion of a positive fraction. Enter 0 if there is none or it is an improper fraction: ";
+	cin >> who;
+	while (who < 0) { 
+	    cout<< "Error, please enter the whole portion of a positive fraction. Enter 0 if there is none or it is an improper fraction: ";
+		cin >> who;
+	}
+	cout << endl << "Please enter a fraction numerator: ";
+	cin >> num;
+	while (num < 0) { 
+	    cout<< "Error, please enter a whole positive numeratior: ";
+		cin >> num;
+	}
+	cout << endl << "Please enter a fraction denominator greater than 0: ";
+	cin >> den;
+	while (den <= 0) { 
+		cout << "Error, please enter a whole positive denominator greater than 0: ";
+		cin >> den;
+	}
+}
+
+void fractions :: calculate () {
+	int temp;
+	temp = num / den;
+	num = num - who * den; //works with 4 1/5 NO ***FIX?
+	who = temp + who;
+	/*if (num < 0 || den <= 0 || whol < 0) {
+		num = 0;
+		den = 1;
+		who = 0;
+		error = true;
+	}*/
+	
+}
+
+void fractions :: output (char & repeat) {
+	//if (error == false) {
+	cout << who << " " << num << "/" << den << endl;
+	cout << "Would you like to enter another number? (Y/N) ";
+	cin >> &repeat;
+	while (repeat != 'Y' || 'y')
+	{
+		cout << "Error. Please only enter Y or N. Would you like to enter another number? ";
+		cin >> &repeat;
+	}
+	//}
+}

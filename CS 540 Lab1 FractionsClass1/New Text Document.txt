@@ -1,0 +1,78 @@
+// Michael Jee
+// 9/8/18
+// CS 540 Lab1
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+class fractions {
+private:
+	int num = 0;
+	int den = 1;
+	int who = 0;
+public:
+	void input(); //mutator
+	void output() const; //accessor
+};
+
+int main() {
+	fractions frac;
+	frac.input();
+	frac.output();
+	return 0;
+}
+
+void fractions::input() {
+	cout << "Please enter the whole portion of a positive fraction. Enter 0 if there is none or it is an improper fraction: ";
+	cin >> who;
+	while (who < 0) {
+		cout << "Error, please enter the whole portion of a positive fraction. Enter 0 if there is none or it is an improper fraction: ";
+		cin >> who;
+	}
+	cout << endl << "Please enter a whole positive fraction numerator: ";
+	cin >> num;
+	while (num < 0) {
+		cout << "Error, please enter a whole positive numerator: ";
+		cin >> num;
+	}
+	cout << endl << "Please enter a fraction denominator greater than 0: ";
+	cin >> den;
+	while (den <= 0) {
+		cout << "Error, please enter a whole positive denominator greater than 0: ";
+		cin >> den;
+	}
+}
+
+void fractions::output() const {
+	cout << who << " " << num << "/" << den << endl;
+}
+
+/*
+Please enter the whole portion of a positive fraction. Enter 0 if there is none or it is an improper fraction: 1
+
+Please enter a whole positive fraction numerator: 2
+
+Please enter a fraction denominator greater than 0: 3
+1 2/3
+
+
+Please enter the whole portion of a positive fraction. Enter 0 if there is none or it is an improper fraction: -8
+Error, please enter the whole portion of a positive fraction. Enter 0 if there is none or it is an improper fraction: 6
+
+Please enter a whole positive fraction numerator: -7
+Error, please enter a whole positive numerator: 5
+
+Please enter a fraction denominator greater than 0: -2
+Error, please enter a whole positive denominator greater than 0: 3
+6 5/3
+
+
+Please enter the whole portion of a positive fraction. Enter 0 if there is none or it is an improper fraction: 54
+
+Please enter a whole positive fraction numerator: 26
+
+Please enter a fraction denominator greater than 0: 0
+Error, please enter a whole positive denominator greater than 0: 64
+54 26/64
+*/
