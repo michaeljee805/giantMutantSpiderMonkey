@@ -1,0 +1,6 @@
+﻿  Definitions.c
+e:\piercecollege\cs539\cs539lab67.3\definitions.c(22): warning C4013: 'gets' undefined; assuming extern returning int
+e:\piercecollege\cs539\cs539lab67.3\definitions.c(12): warning C4101: 'iochar': unreferenced local variable
+  Main.c
+  Generating Code...
+  CS539Lab67.3.vcxproj -> E:\PierceCollege\CS539\CS539Lab67.3\Debug\CS539Lab67.3.exe
