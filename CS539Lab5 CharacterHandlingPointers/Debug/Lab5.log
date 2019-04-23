@@ -1,0 +1,4 @@
+﻿  Source.c
+e:\piercecollege\cs539\cs539lab5\source.c(69): warning C4013: 'gets' undefined; assuming extern returning int
+e:\piercecollege\cs539\cs539lab5\source.c(64): warning C4101: 'iochar': unreferenced local variable
+  Lab5.vcxproj -> E:\PierceCollege\CS539\CS539Lab5\Debug\Lab5.exe
